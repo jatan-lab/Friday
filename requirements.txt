@@ -1,2 +1,2 @@
-# FRIDAY AI Assistant - base version
-# No external dependencies required yet
+google-generativeai
+python-dotenv
