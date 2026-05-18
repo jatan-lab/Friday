@@ -1,9 +1,10 @@
 from core.responder import respond
 from memory.chat_memory import load_memory, save_memory
+from ai.brain import get_ai_response
 
 memory = load_memory()
 
-respond("FRIDAY is now online.")
+respond("FRIDAY AI Core is now online.")
 
 while True:
 
@@ -16,10 +17,12 @@ while True:
         respond("Goodbye.")
         break
 
-    reply = f"I received: {user_input}"
+    # 🧠 AI RESPONSE
+    reply = get_ai_response(user_input)
 
     respond(reply)
 
+    # 💾 SAVE MEMORY
     memory.append({
         "user": user_input,
         "assistant": reply
